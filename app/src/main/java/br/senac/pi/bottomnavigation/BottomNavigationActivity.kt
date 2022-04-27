@@ -6,6 +6,7 @@ import br.senac.pi.R
 import br.senac.pi.databinding.ActivityBottomNavigationBinding
 import br.senac.pi.fragments.AlbumsFragment
 import br.senac.pi.fragments.ArtistsFragment
+import br.senac.pi.fragments.PlaylistFragment
 import br.senac.pi.fragments.RecentsFragment
 
 class BottomNavigationActivity : AppCompatActivity() {
@@ -25,6 +26,10 @@ class BottomNavigationActivity : AppCompatActivity() {
                 }
                 R.id.albuns -> {
                     val frag = AlbumsFragment()
+                    supportFragmentManager.beginTransaction().replace(R.id.container, frag).commit()
+                }
+                R.id.playlist -> {
+                    val frag = PlaylistFragment()
                     supportFragmentManager.beginTransaction().replace(R.id.container, frag).commit()
                 }
                 else -> {
